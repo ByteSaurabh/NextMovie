@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NextMovie Futuristic Design System - Dark Neon Cyberpunk Theme */
+
+@layer base {
+  :root {
+    /* Deep space backgrounds */
+    --background: 240 15% 4%;
+    --foreground: 180 100% 95%;
+
+    /* Glassmorphic cards */
+    --card: 240 15% 8%;
+    --card-foreground: 180 80% 90%;
+
+    /* Popover elements */
+    --popover: 240 20% 6%;
+    --popover-foreground: 180 90% 95%;
+
+    /* Neon cyan primary */
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 15% 4%;
+
+    /* Electric purple secondary */
+    --secondary: 285 100% 60%;
+    --secondary-foreground: 180 100% 95%;
+
+    /* Muted dark tones */
+    --muted: 240 10% 15%;
+    --muted-foreground: 180 30% 65%;
+
+    /* Neon pink accent */
+    --accent: 315 100% 65%;
+    --accent-foreground: 240 15% 4%;
+
+    /* Danger red */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 180 100% 95%;
+
+    /* Glowing borders */
+    --border: 240 15% 20%;
+    --input: 240 15% 12%;
+    --ring: 180 100% 50%;
+
+    /* Increased border radius for futuristic look */
+    --radius: 0.75rem;
+
+    /* Custom NextMovie theme tokens */
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 285 100% 60%;
+    --neon-pink: 315 100% 65%;
+    --deep-space: 240 15% 4%;
+    --glass-surface: 240 15% 8%;
+    --electric-blue: 220 100% 60%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(240 15% 4%), hsl(285 100% 20%), hsl(180 100% 20%));
+    --gradient-neon: linear-gradient(45deg, hsl(180 100% 50%), hsl(315 100% 65%));
+    --gradient-glass: linear-gradient(135deg, hsl(240 15% 8% / 0.8), hsl(240 15% 12% / 0.6));
+    
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(180 100% 50% / 0.3);
+    --shadow-purple: 0 0 30px hsl(285 100% 60% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(240 15% 4% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: var(--gradient-cosmic);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    transition: var(--transition-smooth);
+  }
+  
+  .neon-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.3);
+    transform: translateY(-2px);
+  }
+  
+  /* Purple neon variant */
+  .purple-glow {
+    box-shadow: var(--shadow-purple);
+  }
+  
+  .purple-glow:hover {
+    box-shadow: 0 0 40px hsl(var(--secondary) / 0.4);
+  }
+  
+  /* Cinematic text effects */
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.8);
+  }
+  
+  /* Animated gradient text */
+  .gradient-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Pulse animation for AI elements */
+  .ai-pulse {
+    animation: ai-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes ai-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { opacity: 0.8; box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+}
